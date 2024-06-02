@@ -1,0 +1,50 @@
+// Create a variable to hold your NFTs
+let Total_nft = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(name, age, job, salary) {
+    const nft = {
+        name: name,
+        age: age,
+        job: job,
+        salary: salary
+    };
+    Total_nft.push(nft);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    var index = 1;
+    for (let i = 0; i < Total_nft.length; i++) {
+        var nft = Total_nft[i];
+        console.log("NFT " + index + ":");
+        console.log("  Name: " + nft.name);
+        console.log("  Age: " + nft.age);
+        console.log("  Job: " + nft.job);
+        console.log("  Annual Salary: " + nft.salary);
+        console.log('-------------------------');
+        index++;
+    }
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    return Total_nft.length;
+}
+
+// Call your functions below this line
+
+// Minting some NFTs
+mintNFT("Ajay", 55, "Software Engineer", 250000 );
+mintNFT("Kartik", 34, "Team Leader", 160000);
+mintNFT("Rakesh", 23, "Intern", 80000);
+mintNFT("Sakshi", 44, "HR", 200000);
+
+// Listing all NFTs
+listNFTs();
+
+// Getting total supply of NFTs
+console.log("Total Supply: " + getTotalSupply());
